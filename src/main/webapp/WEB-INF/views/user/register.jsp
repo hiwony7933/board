@@ -18,11 +18,10 @@
 				</td>
 			</tr>
 			<tr>
-				<td bgcolor="#f5f5f5"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;이메일</font>
-				<div id="emailDiv"> </div></td>
+				<td bgcolor="#f5f5f5"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;이메일</font></td>
 				<td>&nbsp;&nbsp;&nbsp; <input type="email" name="email"
 					id="email" size="30" maxlength=50 required="required" />
-				
+				<div id="emailDiv"> </div>				
 				</td>
 			</tr>
 			<tr>
@@ -74,9 +73,7 @@
 		}
 	});
 	
-
-	var emailcheck = false;
-	
+	var emailcheck = false;	
 	document.getElementById("email").addEventListener("blur",function() {
 		var addr = "emailcheck";
 		var email = document.getElementById("email").value;
@@ -92,5 +89,5 @@
 						}
 					}
 				});
-	})
+	}) 
 </script>
