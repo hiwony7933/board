@@ -35,6 +35,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/jw/java/board/mariadb-java-client-2.5.4.jar"/>
+	<classpathentry kind="lib" path="jbcrypt-0.4.jar"/>
+	<classpathentry kind="lib" path="mariadb-java-client-2.5.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

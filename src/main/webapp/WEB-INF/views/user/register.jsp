@@ -35,6 +35,7 @@
 						확인</font></td>
 				<td>&nbsp;&nbsp;&nbsp; <input type="password" id="pwconfirm"
 					size="20" required="required" />
+				<div id="pwDiv"></div>
 				</td>
 			</tr>
 			<tr>
@@ -42,6 +43,7 @@
 				<td>&nbsp;&nbsp;&nbsp; <input type="text" name="nickname"
 					id="nickname" size="20" pattern="([a-z, A-Z, 가힣]){2,}"
 					required="required" title="닉네임은 문자 2자 이상입니다." />
+					<div id="nicknameDiv"></div>
 				</td>
 			</tr>
 			<tr>
@@ -90,4 +92,52 @@
 					}
 				});
 	}) 
+	
+	var nicknamecheck = false;
+	document.getElementById("nickname").addEventListener("focusout",function(){
+		var nickname = document.getElementById("nickname").value;
+		$.ajax({url : "nicknamecheck", data : {'nickname':nickname}, dataType : "json",	success : function(data) {
+					if (data.result == true) {
+						document.getElementById("nicknameDiv").innerHTML = "사용 가능한 nickname 입니다.";
+						document.getElementById("nicknameDiv").style.color = 'blue';
+						nicknamecheck = true;
+					} else {
+						document.getElementById("nicknameDiv").innerHTML = "사용 불가능한 nickname입니다.";
+						document.getElementById("nicknameDiv").style.color = 'red';
+						nicknamecheck = false
+					}
+				}
+			});
+	})
+	
+	document.getElementById("registerform").addEventListener("submit",function(e){
+		if(emailcheck == false){
+			document.getElementById("emailDiv").innerHTML = "이메일 중복검사를 수행하세요!!";
+			document.getElementById("emailDiv").style.color='red';
+			document.getElementById("email").focus();
+			e.preventDefault();
+			}
+		if(nicknamecheck == false){
+			document.getElementById("nicknameDiv").innerHTML = "닉네임 중복검사를 수행하세요!!";
+			document.getElementById("nicknameDiv").style.color='red';
+			document.getElementById("nickname").focus();
+			e.preventDefault();
+			}
+	var pw = document.getElementById("pw").value;
+	var pwconfirm = document.getElementById("pwconfirm").value;
+		if(pw != pwconfirm){
+			document.getElementById("pwDiv").innerHTML = "2개의 비밀번호가 다릅니다!!";
+			document.getElementById("pwDiv").style.color='red';
+			document.getElementById("pw").focus();
+			e.preventDefault();
+		}
+	var pattern1 = /[0-9]/; // 숫자 var
+		pattern2 = /[a-zA-Z]/; // 문자 var
+		pattern3 = /[~!@#$%^&*()_+|<>?:{}]/;// 특수문자
+		if(!pattern1.test(pw) || !pattern2.test(pw) || !pattern3.test(pw) || pw.length < 8) {
+			document.getElementById("pwDiv").innerHTML = "비밀번호는 8자리 이상 문자, 숫자, 특수문자로 구성하여야 합니다.";
+			document.getElementById("pw").focus();
+			e.preventDefault();
+		}
+	})	
 </script>
