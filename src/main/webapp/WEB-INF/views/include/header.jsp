@@ -27,8 +27,8 @@
 		<section class="sidebar">
 			<ul class="nav nav-tabs">
 				<li role="presentation" class="active"><a href="#">메인</a></li>
-				<li role="presentation"><a href="#">목록보기 </a></li>
-				<li role="presentation"><a href="#">게시물 쓰기 </a></li>
+				<li role="presentation"><a href="/board/list">목록보기 </a></li>
+				<li role="presentation"><a href="/board/register">게시물 쓰기 </a></li>
 				<c:if test="${user == null}">
 					<li role="presentation">
 						<a href="user/register">회원가입</a></li>

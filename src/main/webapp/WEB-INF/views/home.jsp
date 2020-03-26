@@ -5,6 +5,10 @@
 <section class="content">
 	<div class="box">
 		<div class="box-header with-border">
+			
+			<a href="board/list"><h3 class="box-title">게시판 목록보기</h3></a>
+			
+			<a href="board/register"><h3 class="box-title">게시판 글쓰기</h3></a>
 		
 			<a href="user/secession"><h3 class="box-title">회원탈퇴</h3></a>
 		
