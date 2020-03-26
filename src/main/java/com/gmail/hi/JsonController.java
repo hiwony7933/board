@@ -30,4 +30,5 @@ public class JsonController {
 		map.put("result", result == null);
 		return map;
 	}
+	
 }

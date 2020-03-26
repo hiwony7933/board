@@ -20,4 +20,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into springuser(email, pw, nickname, image)
 		values(#{email}, #{pw}, #{nickname}, #{image})
 	</insert>
+	<!-- 로그인 처리를 위한 sql -->
+	<select id="login" resultType="User" parameterType="User">
+		select email, nickname, image, pw
+		from springuser
+		where email=#{email}
+	</select>
+	<!-- 회원정보 수정 처리를 위한 sql -->
+	<update id="update" parameterType="User">
+		update springuser
+		set pw=#{pw}, nickname=#{nickname}, image=#{image}
+		where email=#{email}
+	</update>
+	<!-- 회원탈퇴 처리를 위한 sql -->
+	<delete id="secession" parameterType="java.lang.String">
+		delete from springuser
+		where email = #{email}
+	</delete>
+	
 </mapper>

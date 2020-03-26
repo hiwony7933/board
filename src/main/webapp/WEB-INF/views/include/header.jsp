@@ -29,9 +29,23 @@
 				<li role="presentation" class="active"><a href="#">메인</a></li>
 				<li role="presentation"><a href="#">목록보기 </a></li>
 				<li role="presentation"><a href="#">게시물 쓰기 </a></li>
-				<li role="presentation"><a href="/user/register">회원가입 </a></li>
+				<c:if test="${user == null}">
+					<li role="presentation">
+						<a href="user/register">회원가입</a></li>
+				</c:if>
+				<c:if test="${user != null}">
+					<li role="presentation">
+						<a href="#"> 
+							<span class="badge">
+								<img src="${pageContext.request.contextPath}/userimage/${user.image}" width="20" height="20" />
+							</span>
+								${user.nickname}님
+						</a>
+					</li>
+				</c:if>
 			</ul>
 		</section>
 	</aside>
 </body>
 </html>
+

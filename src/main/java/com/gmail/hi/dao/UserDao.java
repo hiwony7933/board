@@ -21,4 +21,16 @@ public class UserDao {
 	public int register(User user) {
 		return sqlSession.insert("user.register", user);
 	}
+	public User login(User user) {
+		return sqlSession.selectOne("user.login", user);
+	}
+
+	public int update(User user) {
+		return sqlSession.update("user.update", user);
+	}
+
+	public int secession(String email) {
+		return sqlSession.update("user.secession", email);
+	}
+
 }
