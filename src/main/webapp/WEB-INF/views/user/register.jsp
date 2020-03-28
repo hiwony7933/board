@@ -58,7 +58,7 @@
 	</form>
 	<br /> <br />
 </section>
-<%@include file="../include/footer.jsp"%>
+<// %@include file="../include/footer.jsp"%>
 
 <script>
 	var filename = ''

@@ -32,7 +32,7 @@
 		</div>
 	</div>
 </section>
-<%@ include file="../include/footer.jsp"%>
+<// %@ include file="../include/footer.jsp"%>
 <script>
 	//메인 버튼을 눌렀을 때 처리
 	document.getElementById("mainbtn").addEventListener("click", function() {

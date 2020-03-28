@@ -2,22 +2,24 @@
 	pageEncoding="UTF-8"%>
 <%@include file="./include/header.jsp"%>
 
+<body bgcolor="${color}">
 <section class="content">
 	<div class="box">
 		<div class="box-header with-border">
-			
+		<!-- 
+			<a href="study/list"><h3 class="box-title">Study게시판 목록보기</h3></a>
+			<a href="study/register"><h3 class="box-title">Study 게시판 글쓰기</h3></a>			
 			<a href="board/list"><h3 class="box-title">게시판 목록보기</h3></a>
-			
 			<a href="board/register"><h3 class="box-title">게시판 글쓰기</h3></a>
-		
 			<a href="user/secession"><h3 class="box-title">회원탈퇴</h3></a>
-		
 			<a href="/user/updateform"><h3 class="box-title">회원정보수정</h3></a>
-		
-			<a href="/user/register"><h3 class="box-title">회원가입</h3></a>
+			
 			
 			<c:if test="${user==null}">
+
 				<div class="box-header with-border">
+					<a href="/user/register"><h3 class="box-title">회원가입</h3></a>
+
 					<a href="user/login"><h3 class="boxtitle">로그인</h3></a>
 				</div>
 			</c:if>
@@ -26,11 +28,15 @@
 					<a href="user/logout"><h3 class="boxtitle">로그아웃</h3></a>
 				</div>
 			</c:if>
+			-->
 			
 		</div>
 	</div>
 </section>
-<%@include file="include/footer.jsp"%>
+</body>
+<// %@include file="include/footer.jsp"%>
+
+
 
 <c:if test="${insert != null }">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

@@ -53,10 +53,10 @@ public class BoardServiceImpl implements BoardService {
 		String strDate = sdf.format(cal.getTime());
 
 		for (Board vo : list) {
-			if (strDate.toString().equals(vo.getRegdate().substring(0, 10))) {
-				vo.setDispdate(vo.getRegdate().substring(11));
+			if (strDate.toString().equals(vo.getRegdate().substring(0, 19))) {
+				vo.setDispdate(vo.getRegdate().substring(20));
 			} else {
-				vo.setDispdate(vo.getRegdate().substring(0, 10));
+				vo.setDispdate(vo.getRegdate().substring(0, 19));
 			}
 		}
 		return list;

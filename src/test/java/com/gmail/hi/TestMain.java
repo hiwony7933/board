@@ -8,12 +8,9 @@ public class TestMain {
 	public static void main(String[] args) {
 		Calendar cal = Calendar.getInstance();
 		// Date today = new Date(cal.getTimeInMillis());
-		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-		
 		String strDate = sdf.format(cal.getTime());
-		
-		System.out.println(strDate.substring(0,14));
+		System.out.println(strDate.substring(0,19));
 		
 		
 		//strDate.toString().equals(today.substring(11));

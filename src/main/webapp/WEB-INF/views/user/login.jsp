@@ -32,4 +32,4 @@
 		<div class="col-md-4"></div>
 	</div>
 </div>
-<%@ include file="../include/footer.jsp"%>
+<// %@ include file="../include/footer.jsp"%>

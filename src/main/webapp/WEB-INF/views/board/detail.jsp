@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+\<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
 <section class="content">
@@ -13,12 +13,16 @@
 			</div>
 			<div class="form-group">
 				<label>내용</label>
-				<textarea name="content" rows="20" readonly="readonly"
+				<textarea name="content" rows="10" readonly="readonly"
 					class="form-control">${vo.content}</textarea>
 			</div>
 			<div class="form-group">
-				<label>작성자</label> <input type="text" class="form-control"
-					value="${vo.nickname}" readonly="readonly" />
+				<label>작성자</label> 
+				<input type="text" class="form-control" value="${vo.nickname}" readonly="readonly" />
+			<!-- 	<span class="badge">
+					<img src="${pageContext.request.contextPath}/userimage/${user.image}" width="20" height="20" />
+				</span>
+			 -->		
 			</div>
 		</div>
 		<div class="box-footer">
@@ -31,7 +35,7 @@
 		</div>
 	</div>
 </section>
-<%@ include file="../include/footer.jsp"%>
+<// %@  include file="../include/footer.jsp"%>
 <script>
 	//메인 버튼을 눌렀을 때 처리
 	document.getElementById("mainbtn").addEventListener("click", function() {

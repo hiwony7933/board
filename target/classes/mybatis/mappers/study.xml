@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="study">
+    <insert id="register" parameterType="Study">
+		insert into studyboard(bno, title, content, ip, email)
+		select case count(*) when 0 then 1 else max(bno) + 1 end, #{title}, #{content}, #{ip}, #{email} from studyboard
+    </insert>
+
+    <!-- 전체 목록을 가져오는 sql -->
+    <select id="list" resultType="Study">
+        select bno, title, nickname, regdate, readcnt, u.email
+        from springuser u, studyboard b
+        where u.email = b.email
+        order by updatedate desc
+    </select>
+    <!-- 글번호를 가지고 하나의 데이터를 가져오는 sql -->
+    <select id="detail" resultType="Study"
+        parameterType="java.lang.Integer">
+        select bno, title, content, u.email, ip, nickname, regdate, updatedate,
+        readcnt
+        from springuser u, studyboard b
+        where u.email = b.email and bno = #{bno}
+    </select>
+
+    <!-- 글번호를 가지고 조회수를 1증가시키는 sql -->
+    <update id="updateReadcnt" parameterType="java.lang.Integer">
+        update studyboard
+        set readcnt = readcnt + 1
+        where bno = #{bno}
+    </update>
+    
+        <!-- 게시글을 수정하는 sql -->
+    <update id="update" parameterType="Study">
+        update studyboard
+        set title=#{title}, content=#{content},
+        ip=#{ip}, updatedate=now()
+        where bno = #{bno}
+    </update>
+    <!-- 글번호를 가지고 게시글을 삭제하는 sql -->
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from studyboard
+        where bno = #{bno}
+    </delete>
+
+
+    
+
+
+
+
+</mapper>
+

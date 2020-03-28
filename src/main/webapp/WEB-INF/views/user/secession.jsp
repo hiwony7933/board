@@ -1,4 +1,3 @@
- user 디렉토리에 비밀번호 입력 페이지(secession)를 생성하고 작성
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
@@ -27,4 +26,5 @@
 		<div class="col-md-4"></div>
 	</div>
 </div>
-<%@ include file="../include/footer.jsp"%>
+<// %@ include file="../include/footer.jsp"%>
+

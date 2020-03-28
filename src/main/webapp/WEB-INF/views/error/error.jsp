@@ -36,6 +36,6 @@
 			<li>${stack.toString()}</li>
 		</c:forEach>
 	</ul>
-	<%@ include file="../include/footer.jsp"%>
+	<// %@ include file="../include/footer.jsp"%>
 </body>
 </html>

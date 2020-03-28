@@ -19,29 +19,28 @@ import com.gmail.hi.domain.User;
 
 @Controller
 public class HomeController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		String formattedDate = dateFormat.format(date);
-		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("serverTime", formattedDate);
 		return "home";
 	}
 
 	@Autowired
 	private UserService userService;
 
-	
 	@RequestMapping(value = "user/pwcheck", method = RequestMethod.POST)
 	public String pwcheck(User user, HttpSession session, Model model, RedirectAttributes attr) {
 		User loginUser = (User) session.getAttribute("user");
 		user.setEmail(loginUser.getEmail());
 		User userXO = userService.login(user);
-		
+
 		if (userXO == null) {
 			attr.addFlashAttribute("msg", "비밀번호가 잘못되었습니다.");
 			return "redirect:/user/update";
@@ -63,4 +62,5 @@ public class HomeController {
 			return "user/secession";
 		}
 	}
+
 }

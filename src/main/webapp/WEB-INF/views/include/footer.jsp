@@ -4,7 +4,7 @@
 	<div class="pull-right hidden-xs">
 		<b>Version</b> 1.0
 	</div>
-	<strong>Copyright &copy; 2019 <a href="#">Spring MVC Board</a>.
+	<strong>Copyright &copy; 2020 <a href="../">JW Study Spring MVC Board</a>.
 	</strong> All rights reserved.
 </footer>
 <!-- Bootstrap 3.3.2 JS -->

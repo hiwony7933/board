@@ -20,7 +20,7 @@
 					</div>
 					<div class="form-group">
 						<label>내용</label>
-						<textarea class="form-control" rows="20" name='content'></textarea>
+						<textarea class="form-control" rows="10" name='content'></textarea>
 					</div>
 					<div class="form-group">
 						<label>작성자</label> 
@@ -37,4 +37,4 @@
 	</div>
 	<!-- end panel -->
 </div>
-<%@include file="../include/footer.jsp"%>
+<// %@include file="../include/footer.jsp"%>
